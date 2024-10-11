@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <style>
+    /* CSS */
+    .bgr {
+      height: 100vh;
+      background-image: url('../images/bgr1.jpg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .form-container {
+  background-color: rgba(255, 254, 254, 0.8); /* Màu nền gần trắng với độ mờ 0.8 */
+  padding: 20px; /* Khoảng cách bên trong */
+  border-radius: 10px; /* Bo tròn góc */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Bóng đổ */
+  max-width: 400px; /* Chiều rộng tối đa */
+  width: 100%; /* Chiều rộng tương đương với phần cha */
+}
+
+.form-container input[type="text"] {
+  width: calc(100% - 40px); /* Chiều rộng input là 100% trừ đi khoảng cách padding */
+  padding: 10px; /* Khoảng cách bên trong input */
+  margin-bottom: 10px; /* Khoảng cách dưới input */
+  border-radius: 5px; /* Bo tròn góc của input */
+  border: 1px solid #ccc; /* Viền của input */
+}
+
+.form-container label {
+  display: block; /* Hiển thị dưới dạng block */
+  margin-bottom: 5px; /* Khoảng cách dưới của label */
+}
+
+.form-container button[type="button"] {
+  width: 100%; /* Chiều rộng 100% */
+  background-color: red; /* Màu nền đỏ */
+  border: 2px solid black; /* Viền đen với độ rộng là 2px */
+  border-radius: 5px; /* Bo tròn góc */
+  font-family: "Comic Sans MS", cursive; /* Phông chữ Comic Sans */
+  font-size: 16px; /* Kích thước phông chữ */
+  padding: 10px 20px; /* Khoảng cách bên trong nút */
+  cursor: pointer; /* Hình con trỏ khi di chuột */
+  transition: background-color 0.3s, color 0.3s; /* Hiệu ứng chuyển đổi màu */
+}
+
+.form-container button[type="button"]:hover {
+  background-color: darkred; /* Màu nền đỏ đậm khi hover */
+  color: white; /* Màu chữ trắng khi hover */
+}
+
+
+    #play {
+  width: 100%;
+  background-color: red; /* Màu nền đỏ */
+  border: 2px solid black; /* Viền đen với độ rộng là 2px */
+  border-radius: 5px; /* Bo tròn viền */
+  font-family: "Comic Sans MS", cursive; /* Phông chữ Comic Sans */
+  font-size: 16px; /* Kích thước phông chữ */
+  padding: 10px 20px; /* Khoảng cách bên trong nút */
+  cursor: pointer; /* Hình con trỏ khi di chuột */
+  transition: background-color 0.3s, color 0.3s; /* Hiệu ứng chuyển đổi màu */
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Bóng đổ */
+}
+
+#play:hover {
+  background-color: darkred; /* Màu nền đỏ đậm khi hover */
+  color: white; /* Màu chữ trắng khi hover */
+}
+
+  </style>
+
+  <div class="bgr">
+  <head>
+    <%- include(`partials/head.ejs`) %>
+    
+  </head>
+  <body>
+
+      <main class="container">
+        <header class="row">
+            <%- include(`partials/header.ejs`) %>
+
+        </header>
+            <section class="row" id="app">
+                <div class="col-6 offset-3 mt-3">
+                    <form action="board">
+                      <!-- nằm trong file backend (app.get('/board')...) -->
+                        <div class="form-group">
+                          <label for="username">Username:</label>
+                          <input type="text"
+                            class="form-control" name="username" id="username" aria-describedby="UsernameHelpId" placeholder="username">
+                          <small id="UsernameHelpId" class="form-text text-muted invisible">Username không được để trống hoặc ít hơn 3 kí tự</small>
+                        </div>
+
+                        <div class="form-group">
+                            
+                            <button  class="btn btn-primary" type="button" id="play" name="">Play game</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+            <footer class="row">
+                <%- include(`partials/footer.ejs`) %>
+
+            </footer>
+      </main>
+      <script src="assets/user.bundle.js"></script>
+      <script src="assets/vendors-node_modules_autobind-decorator_lib_esm_index_js-node_modules_class-validator_esm5_de-157a7d.bundle.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <%- include(`partials/foot.ejs`) %>
+    
+  </body>
+</div>
+</html>

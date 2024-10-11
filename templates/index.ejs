@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <%- include(`partials/head.ejs`) %>
+    <style>
+        header, footer, .reset {
+      font-family: 'Comic Sans MS', cursive; /* Sử dụng font Comic Sans */
+    }
+        .gameItem {
+            border: 1px solid wheat;
+            border-radius: 10px;
+            box-shadow: 5px 10px 10px wheat;
+            height: 100px;
+            width: 100px; /* Thay đổi kích thước của hình ảnh */
+            display: flex; /* Căn giữa hình ảnh */
+            align-items: center;
+            justify-content: center;
+            overflow: hidden; /* Tránh hiện tượng tràn hình */
+            position: relative;
+
+            margin: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+    
+        .gameItem img {
+            max-width: 100%;
+            max-height: 100%;
+            transition: transform 0.3s ease; /* Thêm hiệu ứng transition */
+        }
+
+        .gameItem:hover {
+            transform: translateY(-5px); /* Lift up on hover */
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Bigger shadow on hover */
+        }
+        
+        .gameItem:hover img {
+            transform: scale(1.1); /* Phóng to hình ảnh khi hover */
+        }
+    
+        .unmatched {
+            background-color: red;
+        }
+        .container{
+          /* width:50%;
+          height:50%; */
+          background-image: url('../images/bgr1.jpg');
+        }
+      
+    </style> 
+
+</head>
+  <body>
+    <main class="container">
+
+        <header class="row">
+            <%- include(`partials/header.ejs`) %>
+        </header>
+
+        <div id="app">
+            <section class="row" id="board">
+                <!-- <div class="col-2 gameItem m-2 p1 text-center">
+                    <img src="" alt="" class="img-fluid">
+                </div> -->
+            </section>
+            <section class="row">
+                <div class="reset" >
+                    <hr>
+                    <button type="button" class="btn btn-primary" id="reset"> Reset</button>
+                    <button type="button" class="btn btn-danger"> <a href="login" style="text-decoration: none;" class="text-white">Cancel</a> </button>
+
+                </div>
+            </section>
+        </div>
+            <footer class="row">
+                <%- include(`partials/footer.ejs`) %>
+                
+            </footer>
+      </main>
+    <!-- Optional JavaScript -->
+
+    <script src="assets/main.bundle.js"></script>
+    <script src="assets/vendors-node_modules_autobind-decorator_lib_esm_index_js-node_modules_class-validator_esm5_de-157a7d.bundle.js"></script>
+    <script src="assets/vendors-node_modules_autobind-decorator_lib_esm_index_js-node_modules_css-loader_dist_runtime-efc508.bundle.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <%- include(`partials/foot.ejs`) %>
+
+</body>
+</html>

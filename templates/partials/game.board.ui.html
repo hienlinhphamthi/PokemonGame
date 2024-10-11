@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <%- include(`partials/head.ejs`) %>
+    <style>
+        .gameItem{
+            border: 1px solid wheat;
+            border-radius: 10px;
+            box-shadow: 5px 10px 10px wheat;
+            height: 100px;
+
+        }
+        .unmatched{
+            background-color: red;
+        }
+    </style>
+
+</head>
+  <body>
+    <main class="container">
+        <header class="row">
+            <%- include(`partials/header.ejs`) %>
+        </header>
+        <div id="app">
+            <section class="row">
+
+                <div class="col-2 gameItem m-2 p1 text-center">
+                    <img src="" alt="" class="img-fluid">
+                </div>
+
+                
+            </section>
+            <section class="row">
+                <div class="col" id="reset">
+                    <hr>
+                    <button class="btn btn-primary"> Reset</button>
+                    <button class="btn btn-danger"> Cancel</button>
+
+
+                </div>
+            </section>
+        </div>
+            <footer class="row">
+                <%- include(`partials/footer.ejs`) %>
+                
+            </footer>
+      </main>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <%- include(`partials/foot.ejs`) %>
+
+</body>
+</html>
